@@ -16,10 +16,20 @@
   pointer-events: none;
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
   .appLogo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+h1 {
+  font-family: 'Slidefu';
+}
+
+@font-face {
+  font-family: 'Slidefu';
+  src: local('Slidefu'), url(./assets/fonts/Slidefu-Regular-2.ttf) format('truetype');
 }
 
 .robotList {
