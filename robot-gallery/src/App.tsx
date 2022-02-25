@@ -59,7 +59,7 @@ class App extends React.Component<Props, State> {
           }, () => {
             console.log('count-4', this.state.count) // 2
           })
-          // console.log('count-2', this.state.count) // 0
+          console.log('count-2', this.state.count) // 0
         }}>Click</button>
         <span>count: {this.state.count}</span>
 
