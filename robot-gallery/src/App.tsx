@@ -5,7 +5,7 @@ import logo from './assets/images/logo.svg'
 import Robot from "./components/Robot";
 import styles from "./App.module.css";
 import ShoppingCart from './components/ShoppingCart'
-
+import RobotDicount from './components/RobotDiscount'
 
 
 
@@ -134,8 +134,11 @@ const App: React.FC = (props) => {
         {/* 列表 */}
         {error && <div>网站出错了： {error} </div>}
         {!loading ? (<div className={styles.robotList}>
-            {robotGallery.map((r: any) => (
-              <Robot id={r.id} email={r.email} name={r.name}></Robot>
+            {robotGallery.map((r: any, index: number) => (
+              index % 2 === 0 ?
+                (<RobotDicount id={r.id} email={r.email} name={r.name}></RobotDicount>)
+                 :
+                (<Robot id={r.id} email={r.email} name={r.name}></Robot>)
             ))}
           </div>)
           : (<h2>loading 加载中</h2>)
