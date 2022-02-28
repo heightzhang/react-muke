@@ -24,7 +24,7 @@ class App extends React.Component<Props, State> {
     };
   }
 
-  // 在组件创建好dom元素以后、挂载进页面的时候调用
+  // 在组件创建好dom元素以后、挂载进页面的时候调用1
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
