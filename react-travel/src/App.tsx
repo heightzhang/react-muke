@@ -17,7 +17,7 @@ function App() {
             <Carousel/>
           </Col>
         </Row>
-
+      {/* product */}
       </div>
       <Footer/>
     </div>
