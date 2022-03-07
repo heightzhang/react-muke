@@ -1,25 +1,19 @@
 import React from 'react';
 import styles from './App.module.css'
-import { Header, Footer, SideMenu, Carousel } from './components'
-import {Row, Col} from 'antd'
+import { HomePage } from "./pages";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 
 function App() {
   return (
     <div className={styles.App}>
-      <Header/>
-      {/* 页面内容 */}
-      <div className={styles['page-content']}>
-        <Row style={{marginTop: 20}}>
-          <Col span={6}>
-            <SideMenu/>
-          </Col>
-          <Col span={18}>
-            <Carousel/>
-          </Col>
-        </Row>
-      {/* product */}
-      </div>
-      <Footer/>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={HomePage}></Route>
+          <Route path="/signIn" render={() => <h1>登陆页面</h1>}></Route>
+          <Route render={() => <h1>404 not found 页面去火星了</h1>}></Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
