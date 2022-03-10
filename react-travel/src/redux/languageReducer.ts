@@ -1,6 +1,4 @@
-import { Z_DEFAULT_STRATEGY } from "zlib"
-
-interface languageState {
+export interface languageState {
   language: 'en' | 'zh',
   languageList: { name: string, code: string }[]
 }
@@ -17,6 +15,20 @@ const defaultState: languageState = {
 }
 
 
-export default (state = defaultState, action) => {
-  return state
+const languageReducer = (state = defaultState, action: any) => {
+  console.log('action', action)
+
+  switch (action.type) {
+    case 'change_language':
+      return { ...state, language: action.payload };
+    case 'add_language':
+      return {
+        ...state,
+        languageList: [...state.languageList, action.payload]
+      };
+    default:
+      return state
+  }
 }
+
+export default languageReducer
