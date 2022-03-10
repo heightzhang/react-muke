@@ -23,7 +23,7 @@ class HeaderComponent extends React.Component<RouteComponentProps, state> {
   }
 
   handleStoreChange = () => {
-    // 获取更新后的数据
+    // 获取更新后的数据 
     const storeState = store.getState()
     this.setState({
       language: storeState.language,
