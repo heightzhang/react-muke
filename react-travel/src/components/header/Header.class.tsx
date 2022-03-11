@@ -6,10 +6,12 @@ import { GlobalOutlined } from "@ant-design/icons";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import store from '../../redux/store'
 import { languageState } from '../../redux/languageReducer'
+import { withTranslation, WithTranslation } from "react-i18next";
+
 
 interface state extends languageState { }
 
-class HeaderComponent extends React.Component<RouteComponentProps, state> {
+class HeaderComponent extends React.Component<RouteComponentProps & WithTranslation, state> {
   constructor(props: any) {
     super(props)
     const storeState = store.getState()
@@ -49,13 +51,13 @@ class HeaderComponent extends React.Component<RouteComponentProps, state> {
   }
 
   render() {
-    const { history } = this.props
+    const { history, t } = this.props
     return (
       <div className={styles['app-header']}>
         {/* top-header */}
         <div className={styles['top-header']}>
           <div className={styles.inner}>
-            <Typography.Text>让旅游更幸福</Typography.Text>
+            <Typography.Text>{t('header.slogan')}</Typography.Text>
             <Dropdown.Button
               style={{ marginLeft: 15 }}
               overlay={
@@ -63,15 +65,17 @@ class HeaderComponent extends React.Component<RouteComponentProps, state> {
                   {this.state.languageList.map((l) => {
                     return (<Menu.Item key={l.code}>{l.name}</Menu.Item>)
                   })}
-                  <Menu.Item key={'new'}>添加新语言</Menu.Item>
+                  <Menu.Item key={'new'}>                    {t("header.add_new_language")}
+                  </Menu.Item>
                 </Menu>
               }
               icon={<GlobalOutlined />}>
               {this.state.languageList.find(l => l.code === this.state.language)?.name}
             </Dropdown.Button>
             <Button.Group className={styles['button-group']}>
-              <Button onClick={() => history.push('/register')}>注册</Button>
-              <Button onClick={() => history.push('/signIn')}>登陆</Button>
+              <Button onClick={() => history.push('/register')}>                {t("header.register")}
+              </Button>
+              <Button onClick={() => history.push('/signIn')}>{t("header.signin")}</Button>
             </Button.Group>
           </div>
         </div>
@@ -113,4 +117,4 @@ class HeaderComponent extends React.Component<RouteComponentProps, state> {
   }
 }
 
-export const Header = withRouter(HeaderComponent)
+export const Header = withTranslation()(withRouter(HeaderComponent))

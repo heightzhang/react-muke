@@ -5,7 +5,6 @@ import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
 import { useHistory, useLocation, useParams, useRouteMatch } from "react-router-dom";
 
-
 export const Header: React.FC = () => {
   const history = useHistory()
   return (
