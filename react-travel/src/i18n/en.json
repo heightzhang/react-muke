@@ -31,5 +31,8 @@
       "domestic_travel": "Domestic travel",
       "joint_venture": "Joint Venture",
       "start_from": "(start from)"
+  },
+  "business_partners": {
+    "title": "Business Partners"
   }
 }

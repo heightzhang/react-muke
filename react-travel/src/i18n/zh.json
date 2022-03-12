@@ -31,5 +31,8 @@
       "domestic_travel": "国内游推荐",
       "joint_venture": "合作企业",
       "start_from": "(起)"
-  }
+  },
+  "business_partners": {
+    "title": "合作企业"
+    }
 }

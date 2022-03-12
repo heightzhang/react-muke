@@ -13,7 +13,6 @@ import { withTranslation, WithTranslation } from "react-i18next";
 class HomePageComponent extends React.Component<WithTranslation> {
   render() {
     const { t } = this.props
-    console.log('t', t('home_page.hot_recommended'))
 
     return (
       <div>
