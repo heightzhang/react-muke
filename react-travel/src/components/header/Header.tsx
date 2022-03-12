@@ -4,8 +4,8 @@ import logo from "../../assets/logo.svg";
 import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
 import { useHistory, useLocation, useParams, useRouteMatch } from "react-router-dom";
-// import { RootState } from "../../redux/store"; // 重新格式化useSelector
-import { useSelector } from "../../redux/hooks"; // 重新格式化useSelector
+// import { RootState } from "../../redux/store";
+import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
 
 import { Dispatch } from "react";
