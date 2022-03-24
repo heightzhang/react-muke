@@ -55,4 +55,33 @@ const person = {
   lastName: 'gao',
   age: 18
 }
-console.log(person.hobby) // 报错
+// console.log(person.hobby) // 报错
+
+interface IPoint {
+  x: number,
+  y: number;
+  drawPoint: () => void;
+  getDistances: (p: IPoint) => number
+}
+
+class Point implements IPoint {
+  constructor(public x: number, public y: number = 2) {
+
+  }
+
+  drawPoint = () => {
+    console.log('X:', this.x, 'Y:', this.y)
+  }
+
+  getDistances = (p: IPoint) => {
+    return Math.pow(p.x - this.x, 2) + Math.pow(p.y - this.y, 2) 
+  }
+}
+
+const point = new Point(24, 50)
+point.drawPoint()
+
+let makeTuple = <T, Y>(x: T, y: Y) => [x, y];
+const v1 = makeTuple(1, 'one')
+const v2 = makeTuple(true, 1)
+console.log({v1, v2})

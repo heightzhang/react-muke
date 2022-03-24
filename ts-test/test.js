@@ -39,3 +39,29 @@ var log = function (message, code, desc) {
     console.log(message, code, desc);
 };
 log('helloWord');
+var person = {
+    firstName: 'hello Word',
+    lastName: 'gao',
+    age: 18
+};
+var Point = /** @class */ (function () {
+    function Point(x, y) {
+        var _this = this;
+        if (y === void 0) { y = 2; }
+        this.x = x;
+        this.y = y;
+        this.drawPoint = function () {
+            console.log('X:', _this.x, 'Y:', _this.y);
+        };
+        this.getDistances = function (p) {
+            return Math.pow(p.x - _this.x, 2) + Math.pow(p.y - _this.y, 2);
+        };
+    }
+    return Point;
+}());
+var point = new Point(24, 50);
+point.drawPoint();
+var makeTuple = function (x, y) { return [x, y]; };
+var v1 = makeTuple(1, 'one');
+var v2 = makeTuple(true, 1);
+console.log({ v1: v1, v2: v2 });
