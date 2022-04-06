@@ -13,7 +13,7 @@ function App() {
           <Route path="/signIn" component={SignInPage}></Route>
           <Route path="/register" component={RegisterPage}></Route>
           <Route path="/detail/:touristRouteId" component={DetailPage}></Route>
-          <Route render={() => <h1>404 not found 页面去火星了</h1>}></Route>
+          <Route render={() => <h1>404 not found 页面去火星了!</h1>}></Route>
         </Switch>
       </BrowserRouter>
     </div>
