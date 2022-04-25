@@ -1,7 +1,7 @@
 // 用户评论
 export const commentMockData = [
   {
-    author: "Han Solo1",
+    author: "Han Solo",
     avatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
     content: `前往码头搭乘快艇前往潜水艇平台，搭乘潜水艇潜入7米深红海，欣赏神秘美丽的红海海底世界。并有潜水员为您献上海底喂鱼的表演。含接送，中文导游陪同`,
     createDate: "2020-01-06",
