@@ -7,7 +7,7 @@ export const commentMockData = [
     createDate: "2020-01-06",
   },
   {
-    author: "Han Solo1",
+    author: "Han Solo",
     avatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
     content: `早上5点左右从酒店出发前往码头，搭乘小船前往尼罗河西岸。小船上准备有热咖啡，茶，以及小点心。搭乘热气球迎接日出，并俯瞰卢克索。途径哈布城，女王神庙，帝王谷等景点，从高空体验不一样的卢克索。落地后会举办一个小的庆祝仪式，并为客人颁发证书。之后专车送返酒店。`,
     createDate: "2020-02-06",
