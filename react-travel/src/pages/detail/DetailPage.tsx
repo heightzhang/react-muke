@@ -36,7 +36,7 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (props) =>
 
   useEffect(() => {
     const fetchData = async () => {
-      // setLoading(true) 
+      // setLoading(true)
       dispatch(productDetailSlice.actions.fetchStart())
       try {
         const { data } = await axios.get(
