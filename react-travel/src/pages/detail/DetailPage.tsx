@@ -6,7 +6,7 @@ import { Header, Footer, ProductIntro, ProductComments } from "../../components"
 import { DatePicker } from "antd";
 import { commentMockData } from './mockup'
 import styles from "./DetailPage.module.css";
-import { productDetailSlice } from '../../redux/productDetail/slice';
+import { productDetailSlice, getProductDetail } from '../../redux/productDetail/slice';
 import { useSelector } from '../../redux/hooks';
 import { useDispatch } from 'react-redux';
 
@@ -34,26 +34,30 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (props) =>
   // mock 3BB156B5FBA19F9F
   touristRouteId = testId
 
-  useEffect(() => {
-    const fetchData = async () => {
-      // setLoading(true)
-      dispatch(productDetailSlice.actions.fetchStart())
-      try {
-        const { data } = await axios.get(
-          `http://123.56.149.216:8080/api/touristRoutes/${touristRouteId}`
-        )
-        // setProduct(data)
-        // setLoading(false)
-        dispatch(productDetailSlice.actions.fetchSuccess(data));
-      } catch (error: any) {
-        // setError(error.message)
-        // setLoading(false)
-        dispatch(productDetailSlice.actions.fetchFail(error.message));
-      }
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     // setLoading(true)
+  //     dispatch(productDetailSlice.actions.fetchStart())
+  //     try {
+  //       const { data } = await axios.get(
+  //         `http://123.56.149.216:8080/api/touristRoutes/${touristRouteId}`
+  //       )
+  //       // setProduct(data)
+  //       // setLoading(false)
+  //       dispatch(productDetailSlice.actions.fetchSuccess(data));
+  //     } catch (error: any) {
+  //       // setError(error.message)
+  //       // setLoading(false)
+  //       dispatch(productDetailSlice.actions.fetchFail(error.message));
+  //     }
       
-    }
-    fetchData()
-  }, [touristRouteId])
+  //   }
+  //   fetchData()
+  // }, [touristRouteId])
+
+    useEffect(() => {
+      dispatch(getProductDetail(touristRouteId))
+    }, [touristRouteId])
 
   console.log({ loading, product, error })
 
