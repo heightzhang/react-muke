@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
   const dispatch = useDispatch()
   const { t } = useTranslation()
 
-  const menuClickHandler = (e:any) => {
+  const menuClickHandler = (e: any) => {
     console.log(e);
     if (e.key === "new") {
       // 处理新语言添加action
@@ -68,11 +68,15 @@ export const Header: React.FC = () => {
         <span onClick={() => history.push('/')}>
           <img src={logo} className={styles['App-logo']} alt="" />
           <Typography.Title level={3} className={styles.title}>
-          {t("header.title")}
+            {t("header.title")}
           </Typography.Title>
         </span>
 
-        <Input.Search placeholder={'请输入旅游目的地、主题、或关键字'} className={styles['search-input']} />
+        <Input.Search
+         placeholder={'请输入旅游目的地、主题、或关键字'}
+         className={styles['search-input']}
+         onSearch={(keywords) => history.push("/search/" + keywords)}
+        />
       </Layout.Header>
 
       {/* main-menu */}
