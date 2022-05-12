@@ -6,4 +6,3 @@ export * from './signIn'
 export * from './search'
 
 export * from './register'
-// 1
