@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { searchProduct } from '../../redux/productSearch/slice';
 
 import { Header, Footer, FilterArea, ProductList } from "../../components";
+import { MainLayout } from "../../layouts/mainLayout";
 
 interface MatchParams {
   keywords: string;
@@ -55,22 +56,22 @@ export const SearchPage: React.FC = () => {
 
   return (
     <>
-      <Header />
-      <div className={styles["page-content"]}>
-        {/* 分类过滤器 */}
-        <div className={styles["product-list-container"]}>
-          <FilterArea />
+      <MainLayout>
+        <div className={styles["page-content"]}>
+          {/* 分类过滤器 */}
+          <div className={styles["product-list-container"]}>
+            <FilterArea />
+          </div>
+          {/* 产品列表  */}
+          <div className={styles["product-list-container"]}>
+            <ProductList 
+              data={productList}
+              paging={pagination}
+              onPageChange={onPageChange}
+            />
+          </div>
         </div>
-        {/* 产品列表  */}
-        <div className={styles["product-list-container"]}>
-          <ProductList 
-            data={productList}
-            paging={pagination}
-            onPageChange={onPageChange}
-          />
-        </div>
-      </div>
-      <Footer />
+      </MainLayout>
     </>
   );
 }
