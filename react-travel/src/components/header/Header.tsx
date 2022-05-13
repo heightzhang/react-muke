@@ -72,7 +72,7 @@ export const Header: React.FC = () => {
                 <Menu.Item key={"new"}>
                   {t("header.add_new_language")}
                 </Menu.Item>
-              </Menu>
+              </Menu> 
             }
             icon={<GlobalOutlined />}
           >
