@@ -19,7 +19,7 @@ export const SignInForm = () => {
 
   const loading = useSelector(s => s.user.loading)
   const jwt = useSelector(s => s.user.token)
-  const error = useSelector(s => s.user.error)
+  // const error = useSelector(s => s.user.error)
 
   const dispatch = useDispatch()
   const history = useHistory()

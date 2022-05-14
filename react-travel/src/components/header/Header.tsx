@@ -3,14 +3,12 @@ import styles from './Header.module.css'
 import logo from "../../assets/logo.svg";
 import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
-import { useHistory, useLocation, useParams, useRouteMatch } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 // import { RootState } from "../../redux/store";
 import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
 
-import { Dispatch } from "react";
 import {
-  LanguageActionTypes,
   addLanguageActionCreator,
   changeLanguageActionCreator,
 } from "../../redux/language/languageActions";

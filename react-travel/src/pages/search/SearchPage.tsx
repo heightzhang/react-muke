@@ -6,7 +6,7 @@ import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
 import { searchProduct } from '../../redux/productSearch/slice';
 
-import { Header, Footer, FilterArea, ProductList } from "../../components";
+import { FilterArea, ProductList } from "../../components";
 import { MainLayout } from "../../layouts/mainLayout";
 
 interface MatchParams {

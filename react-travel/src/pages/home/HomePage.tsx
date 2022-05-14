@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Footer, SideMenu, Carousel, ProductCollection, BusinessPartners } from '../../components'
+import { SideMenu, Carousel, ProductCollection, BusinessPartners } from '../../components'
 import { Row, Col, Typography } from 'antd'
 import styles from "./HomePage.module.css";
 import { productList1, productList2, productList3 } from './mockups';
