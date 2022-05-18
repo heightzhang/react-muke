@@ -6,3 +6,4 @@ export * from './signIn'
 export * from './search'
 
 export * from './register'
+export * from './shoppingCart'
