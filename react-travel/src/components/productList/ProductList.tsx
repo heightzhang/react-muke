@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { List, Rate, Space, Image, Tag, Typography } from "antd";
-import { LikeOutlined, StarOutlined } from "@ant-design/icons";
+import { MessageOutlined, LikeOutlined, StarOutlined } from "@ant-design/icons";
 
 const { Text } = Typography;
 
@@ -20,8 +20,8 @@ interface Product {
 }
 interface PropsType {
   data: Product[];
-  paging: any;
-  onPageChange?: (nextPage: any, pageSize: any) => void;
+  paging?: any;
+  onPageChange?: (nextPage, pageSize) => void;
 }
 
 const listData = (productList: Product[]) =>
@@ -44,10 +44,10 @@ const listData = (productList: Product[]) =>
     rating: p.rating,
   }));
 
-const IconText = (params: any) => (
+const IconText = ({ icon, text }) => (
   <Space>
-    {React.createElement(params.icon)}
-    {params.text}
+    {React.createElement(icon)}
+    {text}
   </Space>
 );
 
@@ -61,17 +61,24 @@ export const ProductList: React.FC<PropsType> = ({
     <List
       itemLayout="vertical"
       size="large"
-      pagination={{
-        current: paging.currentPage,
-        onChange: (page) => onPageChange && onPageChange(page, paging.pageSize),
-        pageSize: paging.pageSize,
-        total: paging.totalCount,
-      }}
+      pagination={
+        paging
+          ? {
+              current: paging.currentPage,
+              onChange: (page) =>
+                onPageChange && onPageChange(page, paging.pageSize),
+              pageSize: paging.pageSize,
+              total: paging.totalCount,
+            }
+          : false
+      }
       dataSource={products}
       footer={
-        <div>
-          搜索总路线: <Text strong>{paging.totalCount}</Text> 条
-        </div>
+        paging && (
+          <div>
+            搜索总路线: <Text strong>{paging.totalCount}</Text> 条
+          </div>
+        )
       }
       renderItem={(item) => (
         <List.Item
