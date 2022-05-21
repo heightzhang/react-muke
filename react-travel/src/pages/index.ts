@@ -7,3 +7,4 @@ export * from './search'
 
 export * from './register'
 export * from './shoppingCart'
+export * from './placeOrder'

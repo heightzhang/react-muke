@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './App.module.css'
-import { HomePage, DetailPage, RegisterPage, SignInPage, SearchPage, ShoppingCartPage } from "./pages";
+import { HomePage, DetailPage, RegisterPage, SignInPage, SearchPage, ShoppingCartPage, PlaceOrderPage } from "./pages";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { Redirect } from 'react-router-dom'
@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import { getShoppingCart } from './redux/shoppingCart/slice';
 
 const PrivateRoute = ({ component, isAuthenticated, ...rest }: any) => {
-  
+
   const routeComponent = (props: any) => {
     return isAuthenticated ? (
       React.createElement(component, props)
@@ -47,6 +47,11 @@ function App() {
             isAuthenticated={jwt !== null}
             path="/shoppingCart"
             component={ShoppingCartPage}
+          />
+          <PrivateRoute
+            isAuthenticated={jwt !== null}
+            path="/placeOrder"
+            component={PlaceOrderPage}
           />
           <Route render={() => <h1>404 not found 页面去火星了!</h1>}></Route>
         </Switch>
