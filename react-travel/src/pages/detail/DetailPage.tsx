@@ -35,9 +35,9 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (props) =>
   const jwt = useSelector(s => s.user.token) as string
   const shoppingCartLoading = useSelector(s => s.shoppingCart.loading)
 
-  const testId = 'fb6d4f10-79ed-4aff-a915-4ce29dc9c7e1'
+  // const testId = 'fb6d4f10-79ed-4aff-a915-4ce29dc9c7e1'
   // mock 3BB156B5FBA19F9F
-  touristRouteId = testId
+  // touristRouteId = testId
 
   // useEffect(() => {
   //   const fetchData = async () => {
